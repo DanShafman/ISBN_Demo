@@ -18,7 +18,7 @@ class ImageTakenViewController: UIViewController, G8TesseractDelegate {
     @IBOutlet weak var checkDigitLabel: UIButton!
     
     @IBOutlet weak var descTitle: UILabel!
-    
+    @IBOutlet weak var descBody: UILabel!
     
     var imageTaken: UIImage!
     var img = UIImage(named: "four.png")
@@ -98,6 +98,14 @@ class ImageTakenViewController: UIViewController, G8TesseractDelegate {
         titleGroup.setTitle(String(chars[9]) + String(chars[10]) + String(chars[11]), for: .normal)
         checkDigitLabel.setTitle(String(chars[12]), for: .normal)
         
+        langGroup.setTitleColor(UIColor.black, for: .normal)
+        publisherGroup.setTitleColor(UIColor.black, for: .normal)
+        titleGroup.setTitleColor(UIColor.black, for: .normal)
+        checkDigitLabel.setTitleColor(UIColor.red, for: .normal)
+        
+        descTitle.text = ""
+        descBody.text = ""
+        
         langGroup.addTarget(self, action: #selector(langPressed), for: .touchUpInside)
         publisherGroup.addTarget(self, action: #selector(publisherPressed), for: .touchUpInside)
         titleGroup.addTarget(self, action: #selector(titlePressed), for: .touchUpInside)
@@ -108,21 +116,30 @@ class ImageTakenViewController: UIViewController, G8TesseractDelegate {
         langGroup.setTitleColor(UIColor.orange, for: .normal)
         publisherGroup.setTitleColor(UIColor.black, for: .normal)
         titleGroup.setTitleColor(UIColor.black, for: .normal)
-        checkDigitLabel.setTitleColor(UIColor.black, for: .normal)
+        checkDigitLabel.setTitleColor(UIColor.red, for: .normal)
+        
+        descTitle.text = "Language group"
+        descBody.text = "Also called the registration group element, this group identifies the country/language in which the book is being published. Between 1 and 5 digits in length."
     }
     
     func publisherPressed() {
         langGroup.setTitleColor(UIColor.black, for: .normal)
         publisherGroup.setTitleColor(UIColor.orange, for: .normal)
         titleGroup.setTitleColor(UIColor.black, for: .normal)
-        checkDigitLabel.setTitleColor(UIColor.black, for: .normal)
+        checkDigitLabel.setTitleColor(UIColor.red, for: .normal)
+        
+        descTitle.text = "Publisher group"
+        descBody.text = "Also called the registrant element, this identifies the publisher of the book. Usually 4 digits in length."
     }
     
     func titlePressed() {
         langGroup.setTitleColor(UIColor.black, for: .normal)
         publisherGroup.setTitleColor(UIColor.black, for: .normal)
         titleGroup.setTitleColor(UIColor.orange, for: .normal)
-        checkDigitLabel.setTitleColor(UIColor.black, for: .normal)
+        checkDigitLabel.setTitleColor(UIColor.red, for: .normal)
+        
+        descTitle.text = "Title group"
+        descBody.text = "Also called the publication element, identifies the edition/format of the book. May be up to 6 digits in length."
     }
     
     func checkPressed() {
@@ -130,6 +147,20 @@ class ImageTakenViewController: UIViewController, G8TesseractDelegate {
         publisherGroup.setTitleColor(UIColor.black, for: .normal)
         titleGroup.setTitleColor(UIColor.black, for: .normal)
         checkDigitLabel.setTitleColor(UIColor.orange, for: .normal)
+        
+        descTitle.text = "Check digit"
+        
+        let charArr = Array(ean.characters)
+        var cdText = "Single digit that validates the rest of the code. Each digit in the ISBN code is used to derive the check digit. For th e ISBN code \(ean) the formula for the check digit is:\n\n(10 - ("
+        for i in (0...11) {
+            if i % 2 == 0 {
+                cdText.append(String(charArr[i]) + " + ")
+            } else {
+                cdText.append("3*" + String(charArr[i]) + " + ")
+            }
+        }
+        cdText.append("0) mod 10 \n\n = \(charArr[12])")
+        descBody.text = cdText
     }
     
 }
