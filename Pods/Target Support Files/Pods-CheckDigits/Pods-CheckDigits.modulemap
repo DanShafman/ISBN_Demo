@@ -1,0 +1,6 @@
+framework module Pods_CheckDigits {
+  umbrella header "Pods-CheckDigits-umbrella.h"
+
+  export *
+  module * { export * }
+}

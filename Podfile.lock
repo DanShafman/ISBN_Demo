@@ -1,0 +1,15 @@
+PODS:
+  - ALCameraViewController (1.2.5)
+  - TesseractOCRiOS (4.0.0)
+
+DEPENDENCIES:
+  - ALCameraViewController
+  - TesseractOCRiOS
+
+SPEC CHECKSUMS:
+  ALCameraViewController: 3ce731eed0b58f2791ce7404f9d039d10f2235c3
+  TesseractOCRiOS: 90638afbe43d082433f2e76b384c7901d23956df
+
+PODFILE CHECKSUM: dd64de18d5976aa32f4c93cb3cc498a08bce4aef
+
+COCOAPODS: 1.2.0

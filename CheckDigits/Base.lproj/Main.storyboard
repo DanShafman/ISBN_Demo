@@ -1,26 +1,190 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="q9U-D2-qFx">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Check Digits Demo-->
+        <scene sceneID="tHq-gF-3o6">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Kh3-Pl-znu" customClass="MainViewController" customModule="CheckDigits" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="Iwt-yt-63l"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ofq-6h-GJW"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <view key="view" contentMode="scaleToFill" id="0aY-z0-Set">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fiR-Ip-Du6">
+                                <rect key="frame" x="284" y="414" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="Db6-8s-APS"/>
+                                    <constraint firstAttribute="width" constant="200" id="IXS-5d-fJA"/>
+                                    <constraint firstAttribute="height" constant="200" id="ZFm-Wo-TDn"/>
+                                </constraints>
+                                <state key="normal" image="camera"/>
+                                <connections>
+                                    <segue destination="cFv-2E-Lg7" kind="show" identifier="imageTaken" id="cxD-P2-CpY"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Take a picture of the number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfi-Em-OBs">
+                                <rect key="frame" x="84" y="202" width="601" height="88"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="33"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="below the barcode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfX-oq-5WE">
+                                <rect key="frame" x="150" y="267" width="468" height="73"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="33"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Gc-YD-w5L">
+                                <rect key="frame" x="105" y="729" width="535" height="163"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="535" id="XZD-uC-NPp"/>
+                                </constraints>
+                                <string key="text">Hold your phone parallel to the book. Crop the photo so that the top of the photo is the string of numbers below the barcode. Try to focus the camera on the numbers to have as little bluriness as possible.</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fiR-Ip-Du6" firstAttribute="centerY" secondItem="Iwt-yt-63l" secondAttribute="bottom" constant="450" id="6nS-hz-efV"/>
+                            <constraint firstItem="4Gc-YD-w5L" firstAttribute="centerX" secondItem="0aY-z0-Set" secondAttribute="centerX" id="7bp-n1-6li"/>
+                            <constraint firstItem="jfX-oq-5WE" firstAttribute="top" secondItem="Iwt-yt-63l" secondAttribute="bottom" constant="150" id="XhH-RW-QP9"/>
+                            <constraint firstItem="Ofq-6h-GJW" firstAttribute="top" secondItem="4Gc-YD-w5L" secondAttribute="bottom" constant="100" id="bxb-yJ-3JK"/>
+                            <constraint firstAttribute="centerX" secondItem="jfX-oq-5WE" secondAttribute="centerX" id="emW-bN-0wl"/>
+                            <constraint firstItem="nfi-Em-OBs" firstAttribute="top" secondItem="Iwt-yt-63l" secondAttribute="bottom" constant="100" id="fQk-jD-VcR"/>
+                            <constraint firstItem="fiR-Ip-Du6" firstAttribute="centerX" secondItem="0aY-z0-Set" secondAttribute="centerX" id="jaR-yg-yUo"/>
+                            <constraint firstItem="nfi-Em-OBs" firstAttribute="centerX" secondItem="0aY-z0-Set" secondAttribute="centerX" id="s6t-Zk-42w"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Check Digits Demo" id="ORd-qm-IVi"/>
+                    <connections>
+                        <outlet property="cameraButton" destination="fiR-Ip-Du6" id="7aK-pN-sbi"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S3q-xc-Pn3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1018.75" y="288.8671875"/>
+        </scene>
+        <!--Image Taken View Controller-->
+        <scene sceneID="H2Z-hf-M56">
+            <objects>
+                <viewController id="cFv-2E-Lg7" customClass="ImageTakenViewController" customModule="CheckDigits" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8Kq-iy-qUV"/>
+                        <viewControllerLayoutGuide type="bottom" id="303-Rg-xn7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OPR-jj-i9a">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uCC-U3-Ci0">
+                                <rect key="frame" x="147" y="211" width="79" height="60"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="55"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.08235294118" green="0.23137254900000001" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ns5-sH-7kU">
+                                <rect key="frame" x="249" y="210" width="148" height="60"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="55"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.08235294118" green="0.23137254900000001" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bYY-4Z-Pxu">
+                                <rect key="frame" x="424" y="210" width="111" height="60"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="55"/>
+                                <state key="normal" title="a">
+                                    <color key="titleColor" red="0.08235294118" green="0.23137254900000001" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ek7-FZ-xU5">
+                                <rect key="frame" x="552" y="210" width="39" height="60"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="55"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.08235294118" green="0.23137254900000001" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zkb-dZ-0jC">
+                                <rect key="frame" x="308" y="278" width="152" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Press a number group for details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qz7-F9-aV7">
+                                <rect key="frame" x="162" y="127" width="444" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="k53-gr-dd1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="a" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzU-h3-PaI">
+                                <rect key="frame" x="174" y="327" width="421" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ns5-sH-7kU" firstAttribute="leading" secondItem="uCC-U3-Ci0" secondAttribute="trailing" constant="25" id="208-3y-qgI"/>
+                            <constraint firstItem="Ns5-sH-7kU" firstAttribute="top" secondItem="8Kq-iy-qUV" secondAttribute="bottom" constant="146" id="8Ga-54-nCg"/>
+                            <constraint firstItem="bYY-4Z-Pxu" firstAttribute="top" secondItem="8Kq-iy-qUV" secondAttribute="bottom" constant="146" id="ZWd-u7-uNG"/>
+                            <constraint firstItem="Qz7-F9-aV7" firstAttribute="centerX" secondItem="OPR-jj-i9a" secondAttribute="centerX" id="bI0-I7-b8O"/>
+                            <constraint firstItem="ek7-FZ-xU5" firstAttribute="top" secondItem="8Kq-iy-qUV" secondAttribute="bottom" constant="146" id="cir-0C-D2F"/>
+                            <constraint firstItem="Qz7-F9-aV7" firstAttribute="top" secondItem="8Kq-iy-qUV" secondAttribute="bottom" constant="63" id="gwl-bU-xhJ"/>
+                            <constraint firstItem="ek7-FZ-xU5" firstAttribute="leading" secondItem="bYY-4Z-Pxu" secondAttribute="trailing" constant="25" id="jWx-SE-Ljs"/>
+                            <constraint firstItem="uCC-U3-Ci0" firstAttribute="top" secondItem="8Kq-iy-qUV" secondAttribute="bottom" constant="146" id="l6p-YN-ZoD"/>
+                            <constraint firstItem="uCC-U3-Ci0" firstAttribute="leading" secondItem="OPR-jj-i9a" secondAttribute="leadingMargin" constant="160" id="o4I-da-SHK"/>
+                            <constraint firstItem="bYY-4Z-Pxu" firstAttribute="leading" secondItem="Ns5-sH-7kU" secondAttribute="trailing" constant="25" id="vbl-HH-mqj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="checkDigitLabel" destination="ek7-FZ-xU5" id="v0q-sI-GY7"/>
+                        <outlet property="descTitle" destination="nzU-h3-PaI" id="HIA-bZ-g4G"/>
+                        <outlet property="langGroup" destination="uCC-U3-Ci0" id="wa3-pj-EBO"/>
+                        <outlet property="publisherGroup" destination="Ns5-sH-7kU" id="Zbf-hp-jEM"/>
+                        <outlet property="titleGroup" destination="bYY-4Z-Pxu" id="6IN-Ja-ai2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rzU-Pa-7wX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1743.75" y="288.8671875"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kJQ-lM-6gU">
+            <objects>
+                <navigationController id="q9U-D2-qFx" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0xy-Iq-wkj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Kh3-Pl-znu" kind="relationship" relationship="rootViewController" id="c73-Rd-SnB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RM2-54-dSN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="248" y="285"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="camera" width="1024" height="1024"/>
+    </resources>
 </document>
