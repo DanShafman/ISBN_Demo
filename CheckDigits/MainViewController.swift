@@ -18,8 +18,7 @@ class MainViewController: UIViewController, UINavigationControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.tintColor = UIColor.orange;
-        cameraButton.addTarget(self, action: #selector(cameraButtonPressed), for: .touchUpInside)
-    }
+        cameraButton.addTarget(self, action: #selector(cameraButtonPressed), for: .touchUpInside)    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "imageTaken" {
